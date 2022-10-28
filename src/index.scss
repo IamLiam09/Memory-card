@@ -1,11 +1,7 @@
-.light-mode{
-  $font-color: #101212;
-  $body-bg-color: #ffffff;
-}
-.dark-mode{
-  $font-color: #cccccc;
-  $body-bg-color: #101212;
-}
+$whiteText: #101212;
+$white: #ffffff;
+$darkText: #cccccc;
+$dark: #101212;
 body {
   margin: 0;
   padding: 0;
@@ -16,15 +12,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
-
+body.light{
+  background-color: $white;
+  color: $whiteText
+}
+body.dark{
+  background-color: $dark;
+  color: $darkText
+}
+p{
+  margin-bottom: 0 !important;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-h6{
-  border: none;
-  padding: 0;
-  margin: 0;
 }
 nav{
   width: 100%;
