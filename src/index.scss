@@ -45,3 +45,24 @@ nav{
   padding-top: 5px;
   padding-right: 12px;
 }
+// The card styling
+.card{
+  height: 200px;
+  width: 100px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0.3px 0 8px 0.5px black;
+
+}
+img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+// CardHolder stylying
+.cardHolder{
+  max-width: 800px;
+  width: 85%;
+  margin: auto;
+  padding-top: 20px;
+}

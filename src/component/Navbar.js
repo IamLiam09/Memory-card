@@ -16,7 +16,4 @@ const Nav = () => {
 		</nav>
 	);
 };
-// goodluck on remebering this.
-// look up api pictures for cars or anime
-// Look up card designs in the odin project
 export default Nav;
