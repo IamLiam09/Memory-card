@@ -1,5 +1,5 @@
 
-import Nav from "./component/Navbar.js"
+import {Nav} from "./component/Navbar.js"
 function App() {
   return (
     <>

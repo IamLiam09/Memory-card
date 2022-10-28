@@ -1,4 +1,11 @@
-
+.light-mode{
+  $font-color: #101212;
+  $body-bg-color: #ffffff;
+}
+.dark-mode{
+  $font-color: #cccccc;
+  $body-bg-color: #101212;
+}
 body {
   margin: 0;
   padding: 0;
@@ -27,6 +34,13 @@ nav{
 .intl{
   position: absolute;
   right: 0;
-  padding-right: 50px;
+  padding-right: 40px;
   padding-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.intl--switchholder{
+  display: flex;
+  padding-top: 5px;
+  padding-right: 12px;
 }
