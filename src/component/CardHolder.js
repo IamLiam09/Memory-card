@@ -17,4 +17,5 @@ const cardHolder = () => {
 // learn how to use unsplash api
 // create the card animation when clicked
 // do the card to fit in the grid of cardHolder
+// audio when clicked
 export default cardHolder;

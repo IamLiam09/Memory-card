@@ -47,12 +47,12 @@ nav{
 }
 // The card styling
 .card{
-  height: 200px;
-  width: 100px;
+  height: 250px;
+  width: 150px;
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0.3px 0 8px 0.5px black;
-
+  margin: 8px;
 }
 img{
   object-fit: cover;
@@ -65,4 +65,7 @@ img{
   width: 85%;
   margin: auto;
   padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
 }
