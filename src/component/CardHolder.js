@@ -7,15 +7,14 @@ const cardHolder = () => {
             <Card />
             <Card />
             <Card />
-            <Card />
+            <Card className="lavish" />
             <Card />
             <Card />
         </main>
 
     )
 }
-// learn how to use unsplash api
 // create the card animation when clicked
-// do the card to fit in the grid of cardHolder
-// audio when clicked
+// Learn how to populate the display from 4 to 8
+// Implement the unsplash api
 export default cardHolder;
