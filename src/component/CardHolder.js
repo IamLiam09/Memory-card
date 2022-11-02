@@ -4,12 +4,6 @@ const cardHolder = () => {
         <main className="cardHolder">
             <Card />
             <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card className="lavish" />
-            <Card />
-            <Card />
         </main>
 
     )

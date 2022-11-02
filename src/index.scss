@@ -2,6 +2,7 @@ $whiteText: #101212;
 $white: #ffffff;
 $darkText: #cccccc;
 $dark: #101212;
+// Didn't use different file structure because of the way I started the body.
 body {
   margin: 0;
   padding: 0;
@@ -89,4 +90,15 @@ nav{
 .card.bounce{
   transform: translateY(3px);
   display: none;
+}
+// media query for phone and tablets
+@media screen and (max-width: 450px){
+  .holder{
+    position: absolute;
+    left: 3%;
+  }
+  .intl{
+    padding-right: 2px;
+    font-size: small;
+  }
 }
