@@ -1,6 +1,7 @@
 
 import Nav from "./component/Navbar.js"
-import CardHolder from "./component/CardHolder.js"
+import GameCont from "./component/gameCont.js";
+import CardHolder from "./component/CardHolder.js";
 function App() {
   return (
     <>
