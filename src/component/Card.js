@@ -6,9 +6,6 @@ const Card = (props) => {
 	// The audio played when clicked
 	const audio = new Audio();
 	audio.src = aud1;
-	const docCard = document.querySelector(".card");
-	// api production
-
 	// The function that plays when the card is clicked
 	const clicked = () => {
 		audio.play();

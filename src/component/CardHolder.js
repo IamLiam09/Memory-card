@@ -16,27 +16,27 @@ const CardHolder = () => {
 			});
 	}, []);
 	useEffect(() => {
+		function shuffleCards(array) {
+			var i = 0,
+				j = 0,
+				temp = null;
+			for (i = array.length - 1; i > 0; i -= 1) {
+				j = Math.floor(Math.random() * (i + 1));
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
 		const touchcard = document.querySelectorAll(".card");
 		Array.from(touchcard).forEach((element) => {
 			element.addEventListener("click", () => {
 				console.log(element);
-				// shuffleCards(result);
-				// console.log(result)
+				shuffleCards(result);
+				setResult(result)
+				console.log(result)
 			});
 		});
 	}, []);
-	function shuffleCards(array) {
-		var i = 0,
-			j = 0,
-			temp = null;
-		for (i = array.length - 1; i > 0; i -= 1) {
-			j = Math.floor(Math.random() * (i + 1));
-			temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
-		}
-		setResult(array);
-	}
 	return (
 		<main className="cardHolder">
 			<Card result={result.slice(0, 4)} />
