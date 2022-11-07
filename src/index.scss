@@ -56,6 +56,10 @@ nav{
   box-shadow: 0.3px 0 8px 0.5px black;
   margin: 8px;
 }
+.card.clicked{
+  transform: translateY(-6px);
+  transition: transform 2s 0.1s;
+}
 .photo.img{
   object-fit: cover;
   width: 100%;

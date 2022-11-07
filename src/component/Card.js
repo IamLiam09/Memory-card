@@ -2,7 +2,7 @@ import lambo from "./pic.jpg";
 import aud1 from "./theone.wav";
 import { useState, useEffect } from "react";
 const Card = (props) => {
-	const { result } = props;
+	const { result, fired } = props;
 	// The audio played when clicked
 	const audio = new Audio();
 	audio.src = aud1;
@@ -19,7 +19,7 @@ const Card = (props) => {
 							src={image.urls.small}
 							alt="lambo"
 							onClick={
-								clicked()
+								clicked
 							}
 							className="photo img"
 						/>
