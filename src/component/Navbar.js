@@ -1,6 +1,7 @@
 import Themeback from "./Darkmode";
 import logo from "./mainLogo.png"
-const Nav = () => {
+const Nav = (props) => {
+  const {currentScore} = props
 	return (
 		<nav>
 			<div className="holder">
@@ -13,8 +14,8 @@ const Nav = () => {
 					<p>Dark</p>
 				</div>
 				<div>
-					<p className="__text">current score:</p>
-					<p className="__text">best score:</p>
+					<p className="__text">current score: {{currentScore} === 0 ? "" : {currentScore}}</p>
+					<p className="__text">best score: </p>
 				</div>
 			</div>
 		</nav>

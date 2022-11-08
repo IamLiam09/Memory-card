@@ -1,12 +1,14 @@
 import Card from "./Card";
 import axios from "axios";
 import { useState, useEffect, useLayoutEffect } from "react";
-const CardHolder = () => {
+const CardHolder = (props) => {
+  const {setCurrentScore} = props
   const clientId = "oMYNcsWDKd5NtIpyMw0eaWb29b0kdlxAZsHdipLbX38";
   const [result, setResult] = useState([]);
   const [level, setLevel] = useState(4);
   const [ab, setAb] = useState(0)
   const url = `https://api.unsplash.com/search/photos?page=1&query=mclaren&client_id=${clientId}`;
+  // The api function for getting the lambo's
   useEffect(() => {
     axios
       .get(url)
@@ -17,6 +19,7 @@ const CardHolder = () => {
         console.log(err);
       });
   }, []);
+  // The function for shuffling the card when clicked
   useEffect(() => {
     function shuffleCards(array) {
       var i = 0,
@@ -30,21 +33,20 @@ const CardHolder = () => {
       }
       return array;
     }
+    // Selecting a particular card
     const touchcard = document.querySelectorAll(".card");
     Array.from(touchcard).forEach((element) => {
       element.addEventListener("click", () => {
         element.classList.add("clicked")
         shuffleCards(result);
         setResult(result)
-        setAb((ab) => ab + 0.1)
+        setAb((ab) => ab + 0.01)
+        setCurrentScore((current) => current + 1)
       });
       return () => touchcard.removeEventListener("click", () => {
       });
-    })    
-    console.log(ab)
+    })
   }, [result])
-
-
 
 
   return (

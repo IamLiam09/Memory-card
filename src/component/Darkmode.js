@@ -1,4 +1,5 @@
 import { Switch } from "antd";
+// The toggle functionality when clicked
 const Themeback = () => {
     const body = document.body;
     const lightTheme = "light"
