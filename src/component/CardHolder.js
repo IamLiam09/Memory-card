@@ -5,6 +5,7 @@ const CardHolder = () => {
   const clientId = "oMYNcsWDKd5NtIpyMw0eaWb29b0kdlxAZsHdipLbX38";
   const [result, setResult] = useState([]);
   const [level, setLevel] = useState(4);
+  const [ab, setAb] = useState(0)
   const url = `https://api.unsplash.com/search/photos?page=1&query=mclaren&client_id=${clientId}`;
   useEffect(() => {
     axios
@@ -33,16 +34,14 @@ const CardHolder = () => {
     Array.from(touchcard).forEach((element) => {
       element.addEventListener("click", () => {
         element.classList.add("clicked")
-        console.log(element);
         shuffleCards(result);
         setResult(result)
-        console.log(result)
+        setAb((ab) => ab + 0.1)
       });
       return () => touchcard.removeEventListener("click", () => {
-        console.log(element);
-        // setResult(result);
       });
-    })
+    })    
+    console.log(ab)
   }, [result])
 
 
@@ -54,7 +53,7 @@ const CardHolder = () => {
     </main>
   );
 };
-// create the card animation when clicked
 // Learn how to populate the display from 4 to 8
-// Implement the unsplash api
+// start taking for record for card clicked and not continue the ones clicked before
+// if a card has been clicked before and is clicked again make the game console.log(game over)
 export default CardHolder;
