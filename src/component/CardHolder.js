@@ -33,15 +33,21 @@ const CardHolder = (props) => {
       }
       return array;
     }
+    function ifExit(e) {
+      if(e.classList.includes("clicked")){
+        console.log("watching")
+      }
+    }
     // Selecting a particular card
     const touchcard = document.querySelectorAll(".card");
     Array.from(touchcard).forEach((element) => {
-      element.addEventListener("click", () => {
+      element.addEventListener("click", (e) => {
         element.classList.add("clicked")
         shuffleCards(result);
         setResult(result)
         setAb((ab) => ab + 0.01)
         setCurrentScore((current) => current + 1)
+        ifExit(e)
       });
       return () => touchcard.removeEventListener("click", () => {
       });
