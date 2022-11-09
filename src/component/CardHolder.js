@@ -2,12 +2,12 @@ import Card from "./Card";
 import axios from "axios";
 import { useState, useEffect, useLayoutEffect } from "react";
 const CardHolder = (props) => {
-  const {setCurrentScore} = props
+  const { setCurrentScore } = props
   const clientId = "oMYNcsWDKd5NtIpyMw0eaWb29b0kdlxAZsHdipLbX38";
   const [result, setResult] = useState([]);
   const [level, setLevel] = useState(4);
   const [ab, setAb] = useState(0)
-  const url = `https://api.unsplash.com/search/photos?page=1&query=mclaren&client_id=${clientId}`;
+  const url = `https://api.unsplash.com/search/photos?page=1&query=urus&client_id=${clientId}`;
   // The api function for getting the lambo's
   useEffect(() => {
     axios
@@ -33,11 +33,6 @@ const CardHolder = (props) => {
       }
       return array;
     }
-    function ifExit(e) {
-      if(e.classList.includes("clicked")){
-        console.log("watching")
-      }
-    }
     // Selecting a particular card
     const touchcard = document.querySelectorAll(".card");
     Array.from(touchcard).forEach((element) => {
@@ -47,7 +42,6 @@ const CardHolder = (props) => {
         setResult(result)
         setAb((ab) => ab + 0.01)
         setCurrentScore((current) => current + 1)
-        ifExit(e)
       });
       return () => touchcard.removeEventListener("click", () => {
       });

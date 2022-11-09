@@ -1,4 +1,5 @@
 import aud1 from "./theone.wav";
+import LazyLoad from 'react-lazy-load';
 const Card = (props) => {
   const { result } = props;
   // The audio played when clicked
@@ -13,14 +14,18 @@ const Card = (props) => {
       {result.map((image, index) => (
         <>
           <div className="card" key={index} id={index}>
-            <img
-              src={image.urls.small}
-              alt={image.description}
-              onClick={
-                clicked
-              }
-              className="photo img"
-            />
+          <LazyLoad height={230}
+              effect="blur"
+            >
+              <img
+                src={image.urls.small}
+                alt={image.description}
+                onClick={
+                  clicked
+                }
+                className="photo img"
+              />
+            </LazyLoad>
           </div>
         </>
       ))}
