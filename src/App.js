@@ -1,12 +1,9 @@
-
-import Nav from "./component/Navbar.js"
-import GameCont from "./component/gameCont.js";
-import CardHolder from "./component/CardHolder.js";
+import Game from "./component/Game.js";
+// const [bestScore, setBestScore] = useState()
 function App() {
   return (
     <>
-      <Nav />
-      <CardHolder />
+      <Game />
     </>
   )
 }
