@@ -64,6 +64,7 @@ nav{
   object-fit: cover;
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 // CardHolder stylying
 .cardHolder{
@@ -87,9 +88,11 @@ nav{
   width: 100%;
   height: 100%;
   object-fit: contain;
+  user-select: none;
 }
 .intl .__text{
   font-weight: bold;
+  user-select: none;
 }
 .card.bounce{
   transform: translateY(3px);

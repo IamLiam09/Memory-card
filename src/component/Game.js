@@ -4,10 +4,11 @@ import { useState } from "react";
 
 const Game = () => {
   const [currentScore, setCurrentScore] = useState(0)
+  const [bestScore, setBestScore] = useState(0)
   return (
     <>
-      <Nav currentScore={currentScore} />
-      <CardHolder setCurrentScore={setCurrentScore} />
+      <Nav currentScore={currentScore} bestScore={bestScore} setBestScore={setBestScore} />
+      <CardHolder setCurrentScore={setCurrentScore} setBestScore={setBestScore} />
     </>
   )
 }

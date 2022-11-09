@@ -1,12 +1,14 @@
 import Card from "./Card";
 import axios from "axios";
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect, } from "react";
 const CardHolder = (props) => {
-  const { setCurrentScore } = props
+  const { setCurrentScore, setBestScore } = props
   const clientId = "oMYNcsWDKd5NtIpyMw0eaWb29b0kdlxAZsHdipLbX38";
   const [result, setResult] = useState([]);
   const [level, setLevel] = useState(4);
   const [ab, setAb] = useState(0)
+  const [clicked, setClicked] = useState(false)
+  const [cardsClicked, setCardsClicked] = useState([])
   const url = `https://api.unsplash.com/search/photos?page=1&query=urus&client_id=${clientId}`;
   // The api function for getting the lambo's
   useEffect(() => {
@@ -42,13 +44,19 @@ const CardHolder = (props) => {
         setResult(result)
         setAb((ab) => ab + 0.01)
         setCurrentScore((current) => current + 1)
+        setBestScore((current) => current + 1)
+        let cardValueBeingPushed = e.currentTarget.id
+        setCardsClicked([...cardsClicked, cardValueBeingPushed])
+        console.log(cardsClicked)
       });
       return () => touchcard.removeEventListener("click", () => {
       });
     })
   }, [result])
-
-
+  const cardClickedFunc = (value) => {
+    
+    // console.log(cardsClicked)
+  }
   return (
     <main className="cardHolder">
       <Card result={result} />
@@ -56,6 +64,5 @@ const CardHolder = (props) => {
   );
 };
 // Learn how to populate the display from 4 to 8
-// start taking for record for card clicked and not continue the ones clicked before
 // if a card has been clicked before and is clicked again make the game console.log(game over)
 export default CardHolder;

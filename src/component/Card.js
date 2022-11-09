@@ -1,7 +1,7 @@
 import aud1 from "./theone.wav";
 import LazyLoad from 'react-lazy-load';
 const Card = (props) => {
-  const { result } = props;
+  const { result, onClick } = props;
   // The audio played when clicked
   const audio = new Audio();
   audio.src = aud1;
@@ -13,8 +13,8 @@ const Card = (props) => {
     <>
       {result.map((image, index) => (
         <>
-          <div className="card" key={index} id={index}>
-          <LazyLoad height={230}
+          <div className="card" key={index} id={image.id}>
+            <LazyLoad height={230}
               effect="blur"
             >
               <img
