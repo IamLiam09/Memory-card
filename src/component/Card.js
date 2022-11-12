@@ -1,12 +1,12 @@
 import aud1 from "./theone.wav";
 import LazyLoad from 'react-lazy-load';
 const Card = (props) => {
-  const { result, onClick } = props;
+  const { result} = props;
   // The audio played when clicked
   const audio = new Audio();
   audio.src = aud1;
   // The function that plays when the card is clicked
-  const clicked = () => {
+  const clicked = (e) => {
     audio.play();
   };
   return (
