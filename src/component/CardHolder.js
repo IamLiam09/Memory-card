@@ -1,14 +1,11 @@
 import Card from "./Card";
 import axios from "axios";
-import { useState, useEffect, } from "react";
+import { useState, useEffect } from "react";
 const CardHolder = (props) => {
-  const { setCurrentScore, setBestScore } = props
+  const { setCurrentScore, setBestScore, setClicked, setChecker, level} = props
   const clientId = "oMYNcsWDKd5NtIpyMw0eaWb29b0kdlxAZsHdipLbX38";
   const [result, setResult] = useState([]);
-  const [level, setLevel] = useState(4);
   const [ab, setAb] = useState(0)
-  const [clicked, setClicked] = useState(false)
-  const [cardsClicked, setCardsClicked] = useState([])
   const url = `https://api.unsplash.com/search/photos?page=1&query=urus&client_id=${clientId}`;
   // The api function for getting the lambo's
   useEffect(() => {
@@ -20,7 +17,7 @@ const CardHolder = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [level]);
   // The function for shuffling the card when clicked
   useEffect(() => {
     function shuffleCards(array) {
@@ -39,24 +36,16 @@ const CardHolder = (props) => {
     const touchcard = document.querySelectorAll(".card");
     Array.from(touchcard).forEach((element) => {
       element.addEventListener("click", (e) => {
-        element.classList.add("clicked")
         shuffleCards(result);
         setResult(result)
+        setClicked((clicked) => [...clicked, element.id])
         setAb((ab) => ab + 0.01)
         setCurrentScore((current) => current + 1)
         setBestScore((current) => current + 1)
-        let cardValueBeingPushed = e.currentTarget.id
-        setCardsClicked([...cardsClicked, cardValueBeingPushed])
-        console.log(cardsClicked)
-      });
-      return () => touchcard.removeEventListener("click", () => {
+        setChecker(element.id)
       });
     })
   }, [result])
-  const cardClickedFunc = (value) => {
-    
-    // console.log(cardsClicked)
-  }
   return (
     <main className="cardHolder">
       <Card result={result} />
