@@ -2,7 +2,7 @@ import Card from "./Card";
 import axios from "axios";
 import { useState, useEffect } from "react";
 const CardHolder = (props) => {
-  const { setCurrentScore, setBestScore, setClicked, setChecker, level} = props
+  const { setCurrentScore, setBestScore, setClicked, level,} = props
   const clientId = "oMYNcsWDKd5NtIpyMw0eaWb29b0kdlxAZsHdipLbX38";
   const [result, setResult] = useState([]);
   const [ab, setAb] = useState(0)
@@ -42,7 +42,6 @@ const CardHolder = (props) => {
         setAb((ab) => ab + 0.01)
         setCurrentScore((current) => current + 1)
         setBestScore((current) => current + 1)
-        setChecker(element.id)
       });
     })
   }, [result])
