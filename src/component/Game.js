@@ -22,18 +22,18 @@ const Game = () => {
   useEffect(() => {
     const reset = () => {
       if (level === 4 && currentScore <= 4) {
-        console.log("IN")
-        console.log(gameCase)
-        console.log(clicked)
         setCurrentScore(0)
+        setClicked([])
       }
       if (level > 4 && currentScore > 4) {
-        console.log("change score")
-        console.log(gameSwitch)
+        setCurrentScore(0)
+        setClicked([])
       }
     }
+    reset()
     console.log(gameCase)
-  }, [gameCase])
+    console.log(clicked)
+  }, [gameCase.length > 0])
   return (
     <>
       <Nav currentScore={currentScore} bestScore={bestScore} setBestScore={setBestScore} />
