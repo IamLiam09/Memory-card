@@ -1,8 +1,9 @@
+
 import Card from "./Card";
 import axios from "axios";
 import { useState, useEffect } from "react";
 const CardHolder = (props) => {
-  const { setCurrentScore, setBestScore, setClicked, level,} = props
+  const { setCurrentScore, setBestScore, setClicked, level, gameCase, high } = props
   const clientId = "oMYNcsWDKd5NtIpyMw0eaWb29b0kdlxAZsHdipLbX38";
   const [result, setResult] = useState([]);
   const [ab, setAb] = useState(0)
@@ -51,6 +52,4 @@ const CardHolder = (props) => {
     </main>
   );
 };
-// Learn how to populate the display from 4 to 8
-// if a card has been clicked before and is clicked again make the game console.log(game over)
 export default CardHolder;
